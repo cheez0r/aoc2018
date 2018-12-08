@@ -12,7 +12,7 @@ for i in `cat $INPUT`; do
 	if [[ $i =~ '\(.\).*\1.*\1' ]];
 		then THREES=`expr $THREES + 1`
 	fi
-	echo $TWOS $THREES tee -a $OUTPUT
+	echo $TWOS $THREES | tee -a $OUTPUT
 done
 
 expr $TWOS \* $THREES
